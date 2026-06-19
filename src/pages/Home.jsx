@@ -34,7 +34,7 @@ const Home = () => {
 
 
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', width: '100%' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px', width: '100%' }}>
           <div className="glass-card">
             <Bot size={48} color="#facc15" style={{ marginBottom: '24px' }} />
             <h3>AI Automation</h3>

@@ -37,12 +37,12 @@ const Services = () => {
   return (
     <div className="container fade-in">
       <div style={{ marginTop: '120px' }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '10px' }}>PROFESSIONAL <span className="highlight"><span>SERVICES</span></span></h1>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '60px', maxWidth: '700px' }}>
+        <h1 className="hero-heading" style={{ marginBottom: '10px' }}>PROFESSIONAL <span className="highlight"><span>SERVICES</span></span></h1>
+        <p className="hero-subtext" style={{ color: 'var(--text-secondary)', marginBottom: '60px', maxWidth: '700px' }}>
           I help businesses scale without hiring more staff by engineering custom automation pipelines and data analytics solutions.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
           {services.map((svc, idx) => (
             <div key={idx} className="glass-card" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ background: 'rgba(250, 204, 21, 0.1)', width: 'fit-content', padding: '16px', borderRadius: '4px', borderLeft: '2px solid var(--accent)' }}>
