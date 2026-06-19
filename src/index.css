@@ -1,16 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-darker: #0d0d0d;
-  --bg-dark: #1a1a1a;
-  --text-primary: #ffffff;
-  --text-secondary: #a3a3a3;
-  --accent: #facc15; /* Vivid Yellow */
-  --accent-glow: rgba(250, 204, 21, 0.4);
+  /* Dark Theme (Default) */
+  --bg-darker: #0f172a; /* Slate 900 */
+  --bg-dark: #1e293b;   /* Slate 800 */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #3b82f6; /* Blue 500 */
+  --accent-glow: rgba(59, 130, 246, 0.4);
   
-  --glass-bg: rgba(26, 26, 26, 0.6);
-  --glass-border: rgba(250, 204, 21, 0.15);
+  --glass-bg: rgba(30, 41, 59, 0.6);
+  --glass-border: rgba(59, 130, 246, 0.15);
   --glass-blur: 16px;
+  --card-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+[data-theme='light'] {
+  --bg-darker: #f8fafc; /* Slate 50 */
+  --bg-dark: #ffffff;   /* White */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #2563eb; /* Blue 600 */
+  --accent-glow: rgba(37, 99, 235, 0.4);
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(37, 99, 235, 0.15);
+  --glass-blur: 16px;
+  --card-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+  --dot-color: rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -26,7 +43,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   /* Cyber/Developer Dot Grid Background */
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot-color, rgba(255, 255, 255, 0.1)) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
@@ -44,9 +61,9 @@ h1, h2, h3, h4 {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
   border-left: 4px solid var(--accent);
-  border-radius: 4px; /* Sharper edges */
+  border-radius: 8px; /* Slightly softer for a modern feel */
   padding: 30px;
   position: relative;
   overflow: hidden;

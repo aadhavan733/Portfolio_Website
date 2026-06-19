@@ -9,10 +9,10 @@
   justify-content: space-between;
   padding: 0 50px;
   z-index: 1000;
-  background: rgba(13, 13, 13, 0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(250, 204, 21, 0.2);
+  border-bottom: 1px solid var(--glass-border);
 }
 
 .nav-brand {
@@ -114,8 +114,8 @@
     right: -100%;
     width: 300px;
     height: 100vh;
-    background: rgba(13, 13, 13, 0.98);
-    border-left: 2px solid rgba(250, 204, 21, 0.2);
+    background: var(--bg-dark);
+    border-left: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
     padding: 100px 40px 40px 40px;

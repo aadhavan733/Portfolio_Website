@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Terminal, Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -13,22 +14,24 @@ const Navbar = () => {
   return (
     <nav className="navbar fade-in">
       <Link to="/" className="nav-brand" onClick={() => setIsMobileMenuOpen(false)}>
-        <Terminal size={32} color="#facc15" strokeWidth={2.5} />
+        <Terminal size={32} color="var(--accent)" strokeWidth={2.5} />
         Aadhavan<span>_</span>
       </Link>
       
       <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-        <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-        <Link to="/about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-        <Link to="/projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>
-        <Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
+        <a href="/#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
+        <a href="/#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
+        <a href="/#skills" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
+        <a href="/#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
+        <a href="/#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
         <Link to="/blog" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
-        <Link to="/contact" className="btn btn-outline mobile-only-btn" onClick={() => setIsMobileMenuOpen(false)}>Let's Talk</Link>
+        <a href="/#contact" className="btn btn-outline mobile-only-btn" onClick={() => setIsMobileMenuOpen(false)}>Let's Talk</a>
       </div>
       
       <div className="nav-actions">
-        <Link to="/contact" className="btn btn-outline desktop-only-btn">Let's Talk</Link>
-        <button className="mobile-menu-btn" onClick={toggleMenu}>
+        <ThemeToggle />
+        <a href="/#contact" className="btn btn-outline desktop-only-btn">Let's Talk</a>
+        <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
           {isMobileMenuOpen ? <X size={28} color="var(--text-primary)" /> : <Menu size={28} color="var(--text-primary)" />}
         </button>
       </div>
