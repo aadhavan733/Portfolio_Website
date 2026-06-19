@@ -235,3 +235,62 @@ h1, h2, h3, h4 {
   padding: 0;
   color: var(--text-primary);
 }
+
+/* -----------------------------
+   Responsive Mobile Adjustments 
+-------------------------------- */
+.hero-heading {
+  font-size: 5.5rem;
+}
+.hero-subtext {
+  font-size: 1.35rem;
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column-reverse !important;
+    text-align: center;
+    margin-top: 50px !important;
+    gap: 30px !important;
+  }
+  
+  .hero-badge {
+    justify-content: center;
+  }
+  
+  .hero-heading {
+    font-size: 3rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .hero-subtext {
+    font-size: 1.15rem !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 20px !important;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .profile-img {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px !important;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+  
+  /* Make highlight look okay when text wraps */
+  .highlight {
+    line-height: 1.4;
+  }
+}

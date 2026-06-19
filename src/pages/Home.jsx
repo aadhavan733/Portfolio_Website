@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   return (
     <div className="container fade-in">
-      <div style={{ marginTop: '120px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
-        <div style={{ flex: '1', minWidth: '300px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '24px' }}>
+      <div className="hero-container" style={{ marginTop: '120px', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '60px', flexWrap: 'wrap' }}>
+        <div style={{ flex: '1', minWidth: '300px', display: 'flex', flexDirection: 'column' }}>
+          <div className="hero-badge" style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '24px' }}>
             <div style={{ width: '50px', height: '2px', background: 'var(--accent)' }}></div>
             <span style={{ color: 'var(--accent)', fontWeight: '700', letterSpacing: '3px', textTransform: 'uppercase', fontFamily: 'Outfit' }}>Data & Automation</span>
           </div>
           
-          <h1 style={{ fontSize: '5.5rem', lineHeight: '1.05', marginBottom: '30px', maxWidth: '900px' }}>
+          <h1 className="hero-heading" style={{ lineHeight: '1.05', marginBottom: '30px', maxWidth: '900px' }}>
             I ENGINEER <br/>
             <span className="highlight"><span>SMART SYSTEMS</span></span> <br/>
             THAT DRIVE GROWTH.
           </h1>
           
-          <p style={{ fontSize: '1.35rem', maxWidth: '650px', marginBottom: '60px', color: 'var(--text-secondary)' }}>
+          <p className="hero-subtext" style={{ maxWidth: '650px', marginBottom: '60px', color: 'var(--text-secondary)' }}>
             I'm Aadhavan. I specialize in extracting messy data, building AI-driven workflows, and engineering automated solutions that save you hundreds of hours.
           </p>
           
-          <div style={{ display: 'flex', gap: '40px', marginBottom: '60px' }}>
+          <div className="hero-buttons" style={{ display: 'flex', gap: '40px', marginBottom: '60px' }}>
             <Link to="/projects" className="btn">View My Work <ArrowRight size={22} /></Link>
             <Link to="/services" className="btn btn-outline">Explore Services</Link>
           </div>
