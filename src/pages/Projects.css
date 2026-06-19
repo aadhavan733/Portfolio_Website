@@ -1,0 +1,79 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.status-badge {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.status-badge.completed {
+  background: rgba(250, 204, 21, 0.2);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.status-badge.pending {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tech-stack span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--bg-darker);
+  background: var(--text-primary);
+  padding: 4px 12px;
+  border-radius: 2px;
+}
+
+.pending-stack span {
+  background: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.coming-soon {
+  opacity: 0.6;
+  border-left-color: var(--text-secondary) !important;
+}
+
+.coming-soon:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.05);
+}
