@@ -2,15 +2,16 @@
 
 :root {
   /* Dark Theme (Default) */
-  --bg-darker: #0f172a; /* Slate 900 */
-  --bg-dark: #1e293b;   /* Slate 800 */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent: #3b82f6; /* Blue 500 */
-  --accent-glow: rgba(59, 130, 246, 0.4);
+  --bg-darker: #0A0A0A;
+  --bg-dark: #171717;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A3A3A3;
+  --accent: #EAB308;
+  --accent-glow: rgba(234, 179, 8, 0.4);
+  --secondary-accent: #F59E0B;
   
-  --glass-bg: rgba(30, 41, 59, 0.6);
-  --glass-border: rgba(59, 130, 246, 0.15);
+  --glass-bg: rgba(23, 23, 23, 0.8);
+  --glass-border: #404040;
   --glass-blur: 16px;
   --card-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
 }
@@ -20,11 +21,12 @@
   --bg-dark: #ffffff;   /* White */
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --accent: #2563eb; /* Blue 600 */
-  --accent-glow: rgba(37, 99, 235, 0.4);
+  --accent: #0891B2; /* Cyan 600 for contrast in light mode */
+  --accent-glow: rgba(8, 145, 178, 0.4);
+  --secondary-accent: #7C3AED; /* Violet 600 */
   
   --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(37, 99, 235, 0.15);
+  --glass-border: rgba(8, 145, 178, 0.15);
   --glass-blur: 16px;
   --card-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
   --dot-color: rgba(0, 0, 0, 0.05);
