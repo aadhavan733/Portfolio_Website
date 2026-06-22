@@ -22,7 +22,7 @@ const projectsData = [
     technologies: ["Python", "PyAutoGUI", "Automation"],
     category: "Automation",
     status: "Completed",
-    githubUrl: "https://github.com/aadhavan733",
+    githubUrl: null,
     liveUrl: null,
     icon: <Keyboard size={32} color="var(--accent)" />
   },

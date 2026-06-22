@@ -50,11 +50,6 @@ const Projects = () => {
               <span>PyAutoGUI</span>
               <span>Automation</span>
             </div>
-            <div className="project-links">
-              <a href="https://github.com/aadhavan733" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>
-                <Code size={18} /> View Code
-              </a>
-            </div>
           </div>
 
           {/* Project 3 - Coming Soon */}
