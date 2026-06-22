@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Bot, BarChart, FileJson, ExternalLink } from 'lucide-react';
+import { Code, Bot, BarChart, FileJson, ExternalLink, Keyboard } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 const projectsData = [
@@ -17,6 +17,17 @@ const projectsData = [
   },
   {
     id: 2,
+    title: "Automation Typing Software",
+    description: "A Python-based automation script engineered to simulate human-like typing for automated data entry and repetitive text tasks, reducing manual workload and increasing efficiency.",
+    technologies: ["Python", "PyAutoGUI", "Automation"],
+    category: "Automation",
+    status: "Completed",
+    githubUrl: "https://github.com/aadhavan733",
+    liveUrl: null,
+    icon: <Keyboard size={32} color="var(--accent)" />
+  },
+  {
+    id: 3,
     title: "Executive Sales Dashboard",
     description: "An interactive Power BI dashboard extracting data from SQL databases to visualize key performance indicators, revenue growth, and regional sales distribution.",
     technologies: ["Power BI", "SQL Server", "DAX"],
@@ -27,7 +38,7 @@ const projectsData = [
     icon: <BarChart size={32} color="var(--accent)" />
   },
   {
-    id: 3,
+    id: 4,
     title: "Automated Invoicing Pipeline",
     description: "A workflow built with n8n that reads new Stripe transactions, generates PDF invoices, and automatically emails them to clients.",
     technologies: ["n8n", "Stripe API", "Node.js"],

@@ -1,4 +1,4 @@
-import { Code, Bot, BarChart, FileJson } from 'lucide-react';
+import { Code, Bot, BarChart, FileJson, Keyboard } from 'lucide-react';
 import './Projects.css';
 
 const Projects = () => {
@@ -35,7 +35,29 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Project 2 - Coming Soon */}
+          {/* Project 2 - Completed */}
+          <div className="glass-card project-card">
+            <div className="project-header">
+              <Keyboard size={40} color="var(--accent)" />
+              <div className="status-badge completed">Completed</div>
+            </div>
+            <h2>Automation Typing Software</h2>
+            <p className="project-desc">
+              A Python-based automation script engineered to simulate human-like typing for automated data entry and repetitive text tasks, reducing manual workload and increasing efficiency.
+            </p>
+            <div className="tech-stack">
+              <span>Python</span>
+              <span>PyAutoGUI</span>
+              <span>Automation</span>
+            </div>
+            <div className="project-links">
+              <a href="https://github.com/aadhavan733" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>
+                <Code size={18} /> View Code
+              </a>
+            </div>
+          </div>
+
+          {/* Project 3 - Coming Soon */}
           <div className="glass-card project-card coming-soon">
             <div className="project-header">
               <BarChart size={40} color="var(--text-secondary)" />
@@ -52,7 +74,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Project 3 - Coming Soon */}
+          {/* Project 4 - Coming Soon */}
           <div className="glass-card project-card coming-soon">
             <div className="project-header">
               <FileJson size={40} color="var(--text-secondary)" />

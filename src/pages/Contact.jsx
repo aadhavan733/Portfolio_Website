@@ -1,4 +1,4 @@
-import { Mail, Link, Terminal, Briefcase } from 'lucide-react';
+import { Mail, Link, Terminal, Briefcase, Phone } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -6,7 +6,7 @@ const Contact = () => {
       <div style={{ marginTop: '120px', maxWidth: '800px' }}>
         <h1 style={{ fontSize: '4rem', marginBottom: '10px' }}>LET'S <span className="highlight"><span>CONNECT</span></span></h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '60px', lineHeight: '1.8' }}>
-          Whether you need a custom Power BI dashboard, a fully automated Python workflow, or just want to chat about data, I'd love to hear from you.
+          Whether you want to discuss data analytics, operations, logistics KPIs, or just want to chat about identifying business trends, I'd love to hear from you.
         </p>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px', marginBottom: '60px' }}>
@@ -17,6 +17,14 @@ const Contact = () => {
             </div>
             <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>Email Me</h3>
             <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.85rem', wordBreak: 'break-all' }}>aadhavankanmaniraja@gmail.com</p>
+          </a>
+
+          <a href="tel:+917339151538" className="glass-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '15px' }}>
+            <div style={{ background: 'rgba(250, 204, 21, 0.1)', padding: '20px', borderRadius: '50%' }}>
+              <Phone size={40} color="var(--accent)" />
+            </div>
+            <h3 style={{ margin: 0, color: 'var(--text-primary)' }}>Call Me</h3>
+            <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.85rem', wordBreak: 'break-all' }}>+91 7339151538</p>
           </a>
 
           <a href="https://www.linkedin.com/in/aadhavan-kanmaniraja" target="_blank" rel="noreferrer" className="glass-card" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: '15px' }}>

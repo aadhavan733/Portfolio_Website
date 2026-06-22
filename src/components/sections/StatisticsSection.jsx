@@ -37,9 +37,9 @@ const StatisticsSection = () => {
   return (
     <section className="container" style={{ padding: '80px 24px', borderTop: '1px solid var(--glass-border)', borderBottom: '1px solid var(--glass-border)', background: 'rgba(0,0,0,0.2)' }}>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: '40px' }}>
-        <Counter from={0} to={15} duration={2} label="Projects Completed" />
-        <Counter from={0} to={12} duration={2} label="Technologies Used" />
-        <Counter from={0} to={3} duration={1.5} label="Certifications" />
+        <Counter from={0} to={2} duration={1.5} label="Projects Completed" />
+        <Counter from={0} to={15} duration={2} label="Technologies & Tools" />
+        <Counter from={0} to={4} duration={1.5} label="Core Interests" />
       </div>
     </section>
   );
