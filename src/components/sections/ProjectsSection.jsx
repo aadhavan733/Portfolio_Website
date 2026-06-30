@@ -1,71 +1,31 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Code, Bot, BarChart, FileJson, ExternalLink, Keyboard } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-
-const projectsData = [
-  {
-    id: 1,
-    title: "AI Job Alert System",
-    description: "A fully autonomous cloud-based automation pipeline that scrapes remote job boards, filters for specific AI/Data roles, eliminates duplicates, and delivers formatted alerts directly to Telegram.",
-    technologies: ["Python", "BeautifulSoup", "GitHub Actions", "Telegram API"],
-    category: "Automation",
-    status: "Completed",
-    githubUrl: "https://github.com/aadhavan733/ai-job-alert-system",
-    liveUrl: null,
-    icon: <Bot size={32} color="var(--accent)" />
-  },
-  {
-    id: 2,
-    title: "Automation Typing Software",
-    description: "A Python-based automation script engineered to simulate human-like typing for automated data entry and repetitive text tasks, reducing manual workload and increasing efficiency.",
-    technologies: ["Python", "PyAutoGUI", "Automation"],
-    category: "Automation",
-    status: "Completed",
-    githubUrl: null,
-    liveUrl: null,
-    icon: <Keyboard size={32} color="var(--accent)" />
-  },
-  {
-    id: 3,
-    title: "Executive Sales Dashboard",
-    description: "An interactive Power BI dashboard extracting data from SQL databases to visualize key performance indicators, revenue growth, and regional sales distribution.",
-    technologies: ["Power BI", "SQL Server", "DAX"],
-    category: "Data Analytics",
-    status: "In Progress",
-    githubUrl: null,
-    liveUrl: null,
-    icon: <BarChart size={32} color="var(--accent)" />
-  },
-  {
-    id: 4,
-    title: "Automated Invoicing Pipeline",
-    description: "A workflow built with n8n that reads new Stripe transactions, generates PDF invoices, and automatically emails them to clients.",
-    technologies: ["n8n", "Stripe API", "Node.js"],
-    category: "Automation",
-    status: "In Progress",
-    githubUrl: null,
-    liveUrl: null,
-    icon: <FileJson size={32} color="var(--accent)" />
-  }
-];
+import { Link } from 'react-router-dom';
+import { projectsData } from '../../data/projectsData';
 
 const categories = ["All", "Automation", "Data Analytics"];
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState("All");
 
-  const filteredProjects = projectsData.filter(project => filter === "All" || project.category === filter);
+  // Filter and get top 3
+  const filteredProjects = projectsData
+    .filter(project => filter === "All" || project.category === filter)
+    .slice(0, 3); // Only show top 3 on Home page
 
   return (
-    <section id="projects" className="container" style={{ padding: '100px 24px' }}>
+    <section id="projects" className="container" style={{ padding: '100px 24px', position: 'relative' }}>
+      <div className="glow-orb primary medium" style={{ top: '20%', left: '-5%' }}></div>
+      
       <motion.h2 
         style={{ fontSize: '3rem', marginBottom: '20px' }}
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
       >
-        <span className="highlight"><span>PROJECTS</span></span>
+        FEATURED <span className="highlight"><span>PROJECTS</span></span>
       </motion.h2>
 
       <div style={{ display: 'flex', gap: '15px', marginBottom: '40px', flexWrap: 'wrap' }}>
@@ -111,8 +71,9 @@ const ProjectsSection = () => {
                   fontWeight: '700',
                   padding: '4px 10px', 
                   borderRadius: '12px',
-                  background: project.status === 'Completed' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(234, 179, 8, 0.2)',
-                  color: project.status === 'Completed' ? '#4ade80' : '#facc15'
+                  background: project.status === 'Completed' ? 'rgba(34, 197, 94, 0.2)' : 'rgba(255, 255, 255, 0.05)',
+                  color: project.status === 'Completed' ? '#4ade80' : 'var(--text-secondary)',
+                  border: project.status === 'Completed' ? '1px solid #4ade80' : '1px solid rgba(255, 255, 255, 0.1)'
                 }}>
                   {project.status}
                 </span>
@@ -145,6 +106,10 @@ const ProjectsSection = () => {
           ))}
         </AnimatePresence>
       </motion.div>
+
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '60px' }}>
+        <Link to="/projects" className="btn btn-outline">View All Projects</Link>
+      </div>
     </section>
   );
 };

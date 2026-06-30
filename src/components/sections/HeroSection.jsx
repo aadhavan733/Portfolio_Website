@@ -2,11 +2,19 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import ParticleNetwork from '../ParticleNetwork';
 
 const HeroSection = () => {
   return (
-    <section className="container" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '100px' }}>
-      <div className="hero-container" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '60px', flexWrap: 'wrap', width: '100%' }}>
+    <section id="home" className="container" style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '100px' }}>
+      {/* Interactive Data Network Background */}
+      <ParticleNetwork />
+      
+      {/* Background glow effects */}
+      <div className="glow-orb primary large" style={{ top: '20%', left: '-10%' }}></div>
+      <div className="glow-orb secondary medium" style={{ bottom: '10%', right: '5%' }}></div>
+
+      <div className="hero-container" style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '60px', flexWrap: 'wrap', width: '100%' }}>
         <motion.div 
           style={{ flex: '1', minWidth: '300px', display: 'flex', flexDirection: 'column' }}
           initial={{ opacity: 0, y: 50 }}

@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -9,10 +10,31 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import { ThemeProvider } from './context/ThemeContext';
 
+function ScrollToHash() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToHash />
         <div className="app-container">
           <Navbar />
           <main className="main-content">

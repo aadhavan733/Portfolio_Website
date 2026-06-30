@@ -1,92 +1,106 @@
-import { Code, Bot, BarChart, FileJson, Keyboard } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ExternalLink } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import { projectsData } from '../data/projectsData';
 import './Projects.css';
 
+const categories = ["All", "Automation", "Data Analytics"];
+
 const Projects = () => {
+  const [filter, setFilter] = useState("All");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const filteredProjects = projectsData.filter(project => filter === "All" || project.category === filter);
+
   return (
-    <div className="container fade-in">
+    <div className="container fade-in" style={{ position: 'relative' }}>
+      <div className="glow-orb primary large" style={{ top: '10%', left: '-5%' }}></div>
+      <div className="glow-orb secondary medium" style={{ top: '60%', right: '-5%' }}></div>
+      
       <div style={{ marginTop: '120px' }}>
-        <h1 style={{ fontSize: '4rem', marginBottom: '10px' }}>FEATURED <span className="highlight"><span>PROJECTS</span></span></h1>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '60px', maxWidth: '600px' }}>
-          Real-world solutions I've engineered to automate workflows, analyze data, and drive efficiency.
+        <h1 className="hero-heading" style={{ marginBottom: '10px' }}>MY <span className="highlight"><span>PROJECTS</span></span></h1>
+        <p className="hero-subtext" style={{ color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '700px' }}>
+          A showcase of my recent work in workflow automation, custom scripting, and data analytics.
         </p>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '40px' }}>
-          
-          {/* Project 1 - Completed */}
-          <div className="glass-card project-card">
-            <div className="project-header">
-              <Bot size={40} color="var(--accent)" />
-              <div className="status-badge completed">Deployed</div>
-            </div>
-            <h2>AI Job Alert System</h2>
-            <p className="project-desc">
-              A fully autonomous cloud-based automation pipeline that scrapes remote job boards, filters for specific AI/Data roles, eliminates duplicates, and delivers formatted alerts directly to Telegram. Runs 24/7 via GitHub Actions.
-            </p>
-            <div className="tech-stack">
-              <span>Python</span>
-              <span>BeautifulSoup</span>
-              <span>GitHub Actions</span>
-              <span>Telegram API</span>
-            </div>
-            <div className="project-links">
-              <a href="https://github.com/aadhavan733/ai-job-alert-system" target="_blank" rel="noreferrer" className="btn btn-outline" style={{ padding: '8px 16px', fontSize: '0.9rem' }}>
-                <Code size={18} /> View Code
-              </a>
-            </div>
-          </div>
-
-          {/* Project 2 - Completed */}
-          <div className="glass-card project-card">
-            <div className="project-header">
-              <Keyboard size={40} color="var(--accent)" />
-              <div className="status-badge completed">Completed</div>
-            </div>
-            <h2>Automation Typing Software</h2>
-            <p className="project-desc">
-              A Python-based automation script engineered to simulate human-like typing for automated data entry and repetitive text tasks, reducing manual workload and increasing efficiency.
-            </p>
-            <div className="tech-stack">
-              <span>Python</span>
-              <span>PyAutoGUI</span>
-              <span>Automation</span>
-            </div>
-          </div>
-
-          {/* Project 3 - Coming Soon */}
-          <div className="glass-card project-card coming-soon">
-            <div className="project-header">
-              <BarChart size={40} color="var(--text-secondary)" />
-              <div className="status-badge pending">Coming Soon</div>
-            </div>
-            <h2 style={{ color: 'var(--text-secondary)' }}>Executive Sales Dashboard</h2>
-            <p className="project-desc" style={{ color: 'var(--text-secondary)' }}>
-              An interactive Power BI dashboard extracting data from SQL databases to visualize key performance indicators, revenue growth, and regional sales distribution.
-            </p>
-            <div className="tech-stack pending-stack">
-              <span>Power BI</span>
-              <span>SQL Server</span>
-              <span>DAX</span>
-            </div>
-          </div>
-
-          {/* Project 4 - Coming Soon */}
-          <div className="glass-card project-card coming-soon">
-            <div className="project-header">
-              <FileJson size={40} color="var(--text-secondary)" />
-              <div className="status-badge pending">Coming Soon</div>
-            </div>
-            <h2 style={{ color: 'var(--text-secondary)' }}>Automated Invoicing Pipeline</h2>
-            <p className="project-desc" style={{ color: 'var(--text-secondary)' }}>
-              A workflow built with n8n that reads new Stripe transactions, generates PDF invoices, and automatically emails them to clients.
-            </p>
-            <div className="tech-stack pending-stack">
-              <span>n8n</span>
-              <span>Stripe API</span>
-              <span>Node.js</span>
-            </div>
-          </div>
-
+        <div style={{ display: 'flex', gap: '15px', marginBottom: '60px', flexWrap: 'wrap' }}>
+          {categories.map(cat => (
+            <button 
+              key={cat}
+              onClick={() => setFilter(cat)}
+              style={{
+                padding: '8px 16px',
+                background: filter === cat ? 'var(--accent)' : 'transparent',
+                color: filter === cat ? 'var(--bg-darker)' : 'var(--text-primary)',
+                border: '1px solid var(--accent)',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                fontWeight: '600',
+                transition: 'all 0.3s ease'
+              }}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
+
+        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '40px', marginBottom: '100px' }}>
+          <AnimatePresence>
+            {filteredProjects.map((project) => (
+              <motion.div 
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                className={`glass-card project-card ${project.status !== 'Completed' ? 'coming-soon' : ''}`}
+                style={{ position: 'relative' }}
+              >
+                <div className="project-header">
+                  <div style={{ background: 'rgba(250, 204, 21, 0.1)', padding: '15px', borderRadius: '50%' }}>
+                    {project.icon}
+                  </div>
+                  <span className={`status-badge ${project.status === 'Completed' ? 'completed' : 'pending'}`}>
+                    {project.status}
+                  </span>
+                </div>
+                
+                <h3 style={{ fontSize: '1.6rem', margin: '10px 0' }}>{project.title}</h3>
+                <p className="project-desc" style={{ color: 'var(--text-secondary)' }}>{project.description}</p>
+                
+                <div className={`tech-stack ${project.status !== 'Completed' ? 'pending-stack' : ''}`}>
+                  {project.technologies.map(tech => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+
+                <div className="project-links">
+                  {project.githubUrl && (
+                    <a href={project.githubUrl} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>
+                      <FaGithub size={20} /> Code
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a href={project.liveUrl} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', textDecoration: 'none', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>
+                      <ExternalLink size={20} /> Demo
+                    </a>
+                  )}
+                  {!project.githubUrl && !project.liveUrl && project.status !== 'Completed' && (
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontStyle: 'italic' }}>Deployment in progress...</span>
+                  )}
+                  {!project.githubUrl && !project.liveUrl && project.status === 'Completed' && (
+                    <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontStyle: 'italic' }}>Private Repository</span>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </div>
   );

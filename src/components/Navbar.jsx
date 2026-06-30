@@ -19,18 +19,18 @@ const Navbar = () => {
       </Link>
       
       <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-        <a href="/#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
-        <a href="/#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</a>
-        <a href="/#skills" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Skills</a>
-        <a href="/#projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</a>
-        <a href="/#services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</a>
+        <Link to="/#home" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+        <Link to="/#about" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+        <Link to="/#skills" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Skills</Link>
+        <Link to="/projects" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Projects</Link>
+        <Link to="/services" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Services</Link>
         <Link to="/blog" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
-        <a href="/#contact" className="btn btn-outline mobile-only-btn" onClick={() => setIsMobileMenuOpen(false)}>Let's Talk</a>
+        <Link to="/#contact" className="btn btn-outline mobile-only-btn" onClick={() => setIsMobileMenuOpen(false)}>Let's Talk</Link>
       </div>
       
       <div className="nav-actions">
         <ThemeToggle />
-        <a href="/#contact" className="btn btn-outline desktop-only-btn">Let's Talk</a>
+        <Link to="/#contact" className="btn btn-outline desktop-only-btn">Let's Talk</Link>
         <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle Menu">
           {isMobileMenuOpen ? <X size={28} color="var(--text-primary)" /> : <Menu size={28} color="var(--text-primary)" />}
         </button>
