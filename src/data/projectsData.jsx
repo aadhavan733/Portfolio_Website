@@ -26,13 +26,14 @@ export const projectsData = [
   },
   {
     id: 3,
-    title: "Executive Sales Dashboard",
-    description: "An interactive Power BI dashboard extracting data from SQL databases to visualize key performance indicators, revenue growth, and regional sales distribution.",
-    technologies: ["Power BI", "SQL Server", "DAX"],
-    category: "Data Analytics",
-    status: "In Progress",
-    githubUrl: null,
+    title: 'Executive Sales Dashboard',
+    description: 'An interactive Power BI dashboard extracting data from SQL databases to visualize key performance indicators, revenue growth, and regional sales distribution.',
+    status: 'Completed',
+    category: 'Data Analytics',
+    technologies: ['Power BI', 'SQL Server', 'DAX', 'Python'],
+    githubUrl: 'https://github.com/aadhavan733/executive-sales-dashboard',
     liveUrl: null,
+    image: '/dashboard.png',
     icon: <BarChart size={32} color="var(--accent)" />
   },
   {

@@ -62,6 +62,11 @@ const ProjectsSection = () => {
               className="glass-card"
               style={{ display: 'flex', flexDirection: 'column' }}
             >
+              {project.image && (
+                <div style={{ width: '100%', height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px' }}>
+                  <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
+                </div>
+              )}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
                 <div style={{ background: 'rgba(250, 204, 21, 0.1)', padding: '12px', borderRadius: '50%' }}>
                   {project.icon}
