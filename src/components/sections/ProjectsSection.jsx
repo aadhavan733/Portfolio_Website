@@ -9,6 +9,7 @@ const categories = ["All", "Automation", "Data Analytics"];
 
 const ProjectsSection = () => {
   const [filter, setFilter] = useState("All");
+  const [hoveredProject, setHoveredProject] = useState(null);
 
   // Filter and get top 3
   const filteredProjects = projectsData
@@ -61,11 +62,23 @@ const ProjectsSection = () => {
               transition={{ duration: 0.3 }}
               className="glass-card"
               style={{ display: 'flex', flexDirection: 'column' }}
+              onMouseEnter={() => setHoveredProject(project.id)}
+              onMouseLeave={() => setHoveredProject(null)}
             >
               {project.image && (
-                <div style={{ width: '100%', height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '20px' }}>
-                  <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }} onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'} />
-                </div>
+                <AnimatePresence>
+                  {hoveredProject === project.id && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0, marginBottom: 0 }}
+                      animate={{ height: '180px', opacity: 1, marginBottom: '20px' }}
+                      exit={{ height: 0, opacity: 0, marginBottom: 0 }}
+                      transition={{ duration: 0.3 }}
+                      style={{ width: '100%', borderRadius: '8px', overflow: 'hidden' }}
+                    >
+                      <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               )}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
                 <div style={{ background: 'rgba(250, 204, 21, 0.1)', padding: '12px', borderRadius: '50%' }}>
