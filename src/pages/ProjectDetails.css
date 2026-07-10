@@ -1,0 +1,128 @@
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.project-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.project-category {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(250, 204, 21, 0.1);
+  padding: 6px 14px;
+  borderRadius: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.tech-badge {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.project-icon-large {
+  background: rgba(250, 204, 21, 0.05);
+  border: 1px solid rgba(250, 204, 21, 0.2);
+  padding: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-icon-large svg {
+  width: 80px;
+  height: 80px;
+}
+
+.project-featured-image {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 60px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-featured-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.detailed-report {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.report-section {
+  padding: 40px;
+}
+
+.report-section .section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.report-section .section-title::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--accent);
+}
+
+.report-section p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.highlight-border {
+  border-left: 4px solid var(--accent);
+}
+
+@media (max-width: 900px) {
+  .project-hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  
+  .project-icon-large {
+    padding: 30px;
+  }
+  
+  .project-icon-large svg {
+    width: 60px;
+    height: 60px;
+  }
+}

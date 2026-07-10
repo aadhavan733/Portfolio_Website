@@ -108,7 +108,7 @@ const ProjectsSection = () => {
                 ))}
               </div>
 
-              <div style={{ display: 'flex', gap: '15px', marginTop: 'auto' }}>
+              <div style={{ display: 'flex', gap: '15px', marginTop: 'auto', flexWrap: 'wrap' }}>
                 {project.githubUrl && (
                   <a href={project.githubUrl} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>
                     <FaGithub size={18} /> Code
@@ -118,6 +118,11 @@ const ProjectsSection = () => {
                   <a href={project.liveUrl} target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-primary)', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.3s' }} onMouseOver={e => e.currentTarget.style.color = 'var(--accent)'} onMouseOut={e => e.currentTarget.style.color = 'var(--text-primary)'}>
                     <ExternalLink size={18} /> Demo
                   </a>
+                )}
+                {project.status === 'Completed' && (
+                  <Link to={`/projects/${project.id}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 'bold', marginLeft: 'auto' }}>
+                    View Full Report →
+                  </Link>
                 )}
               </div>
             </motion.div>

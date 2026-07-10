@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import './Projects.css';
 
@@ -95,6 +96,11 @@ const Projects = () => {
                   )}
                   {!project.githubUrl && !project.liveUrl && project.status === 'Completed' && (
                     <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontStyle: 'italic' }}>Private Repository</span>
+                  )}
+                  {project.status === 'Completed' && (
+                    <Link to={`/projects/${project.id}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--accent)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 'bold', marginLeft: 'auto' }}>
+                      View Full Report →
+                    </Link>
                   )}
                 </div>
               </motion.div>
