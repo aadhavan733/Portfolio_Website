@@ -57,9 +57,14 @@ export const projectsData = [
     description: "A workflow built with n8n that reads new Stripe transactions, generates PDF invoices, and automatically emails them to clients.",
     technologies: ["n8n", "Stripe API", "Node.js"],
     category: "Automation",
-    status: "In Progress",
-    githubUrl: null,
+    status: "Completed",
+    githubUrl: "https://github.com/aadhavan733/automated-invoicing-pipeline",
     liveUrl: null,
-    icon: <FileJson size={32} color="var(--accent)" />
+    icon: <FileJson size={32} color="var(--accent)" />,
+    detailedReport: {
+      problem: "Manually generating and emailing PDF invoices for every successful Stripe transaction is extremely tedious and prone to delays or human error.",
+      solution: "I designed a decoupled backend automation system. An n8n workflow listens for Stripe webhook events and extracts the billing details. It then triggers a custom Node.js/Express microservice I built which utilizes pdfkit to dynamically draw a professional invoice and nodemailer to instantly dispatch it to the client.",
+      results: "The system fully automates the invoicing lifecycle, reducing manual billing time to absolute zero and ensuring customers receive their receipts immediately upon purchase."
+    }
   }
 ];
